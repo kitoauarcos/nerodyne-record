@@ -126,6 +126,20 @@ def main():
                        'the open of the session that followed. This record is short and proves very '
                        'little on its own yet.'),
     }
+    # Only write when something real moved. Without this the job would commit every fifteen
+    # minutes purely because the timestamp advanced, burying the two commits that actually matter
+    # (the published baskets) under thousands that do not. The commit history is the evidence, so
+    # it has to stay readable.
+    if OUT.exists():
+        try:
+            before = json.loads(OUT.read_text(encoding='utf-8'))
+            a = dict(before); a.pop('refreshed_at', None)
+            b = dict(pub); b.pop('refreshed_at', None)
+            if a == b:
+                print('nothing moved since the last run, leaving the file alone')
+                return
+        except Exception:
+            pass
     OUT.write_text(json.dumps(pub, separators=(',', ':')), encoding='utf-8')
     leak = [s for s in (KEY or 'x', SECRET or 'y') if s and s in OUT.read_text(encoding='utf-8')]
     if leak:
