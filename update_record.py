@@ -35,10 +35,47 @@ def api(url):
         return None
 
 
+def collect_fills(book):
+    """Record fills for any basket whose orders have executed.
+
+    Only ever writes fills that are missing. An entry that already has them is left alone, and a
+    fill for a ticker that was not in the published basket is refused, exactly as the manual path
+    does. This is bookkeeping after the fact, not a decision.
+    """
+    changed = False
+    for e in book.get('entries', []):
+        if e.get('fills') or not e.get('orders'):
+            continue
+        ids = {o['order_id'] for o in e['orders']}
+        got = api(BASE + '/orders?status=closed&limit=500&direction=asc') or []
+        done = [o for o in got if o['id'] in ids and o['status'] == 'filled']
+        if not done:
+            print('  %s: orders placed, nothing filled yet' % e['signal_date'])
+            continue
+        fills = []
+        for o in done:
+            if o['symbol'] not in e['tickers']:
+                print('  refusing %s: not in the published basket' % o['symbol'], file=sys.stderr)
+                return changed
+            fills.append({'ticker': o['symbol'], 'shares': float(o['filled_qty']),
+                          'price': float(o['filled_avg_price']), 'commission': 0.0,
+                          'date': o['filled_at'][:10]})
+        e['fills'] = fills
+        e['not_filled'] = sorted(set(e['tickers']) - {f['ticker'] for f in fills})
+        e['cash_invested'] = round(sum(f['shares'] * f['price'] for f in fills), 2)
+        changed = True
+        print('  %s: recorded %d fills, %.2f invested'
+              % (e['signal_date'], len(fills), e['cash_invested']))
+    return changed
+
+
 def main():
     if not BOOK.exists():
         sys.exit('No live_record.json in this repository.')
     book = json.loads(BOOK.read_text(encoding='utf-8'))
+    if KEY and SECRET and collect_fills(book):
+        BOOK.write_text(json.dumps(book, indent=1), encoding='utf-8')
+        print('live_record.json updated with new fills')
     entries = book.get('entries', [])
     traded = [e for e in entries if e.get('fills')]
 
