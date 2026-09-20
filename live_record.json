@@ -1,0 +1,82 @@
+{
+ "model": "Nova Sharpe",
+ "capital_is": "SIMULATED. Alpaca paper account. The baskets and prices are real, the money is not.",
+ "started": "2026-09-01",
+ "capital": 100000.0,
+ "entries": [
+  {
+   "signal_date": "2026-09-01",
+   "published_at": "2026-09-20T10:08:06Z",
+   "tickers": [
+    "ADI",
+    "CRM",
+    "DELL",
+    "EXPE",
+    "GEN",
+    "MPC",
+    "MU",
+    "PAGP",
+    "PWR",
+    "VRT"
+   ],
+   "sha256": "9d33523840071b2c51c26490d31fb6ae07cb5ae4ac88df213e5e8f6de5bd6f4a",
+   "note": "Entered off-cycle: the signal date was 1 September and the account was opened on 20 September, so the entry prices are three weeks late. Every basket from 1 December onward is on schedule.",
+   "weight_each": 0.1,
+   "fills": [],
+   "orders": [
+    {
+     "ticker": "ADI",
+     "qty": 25,
+     "order_id": "58953245-2fe2-4467-9327-4fc81ca40afb"
+    },
+    {
+     "ticker": "CRM",
+     "qty": 39,
+     "order_id": "8a643d78-db2c-4afd-856c-d6e604d576e3"
+    },
+    {
+     "ticker": "DELL",
+     "qty": 16,
+     "order_id": "f9974d2a-ff1b-409b-ae2f-8fca9fbfee5a"
+    },
+    {
+     "ticker": "EXPE",
+     "qty": 34,
+     "order_id": "450dce9e-c5e0-459d-8d4e-091a0cf9783b"
+    },
+    {
+     "ticker": "GEN",
+     "qty": 327,
+     "order_id": "8e40c43b-5287-4abe-b785-5be9a10ae261"
+    },
+    {
+     "ticker": "MPC",
+     "qty": 22,
+     "order_id": "658727ce-4d0e-44fc-9148-fc6bcde1a870"
+    },
+    {
+     "ticker": "MU",
+     "qty": 9,
+     "order_id": "6366604f-a3b3-46dd-84d0-7cf93bd2d34c"
+    },
+    {
+     "ticker": "PAGP",
+     "qty": 343,
+     "order_id": "475aff39-d754-46ce-aeb5-c815e00d80f2"
+    },
+    {
+     "ticker": "PWR",
+     "qty": 14,
+     "order_id": "ee40a50a-e41f-4d9c-a613-b81ce1fdc035"
+    },
+    {
+     "ticker": "VRT",
+     "qty": 38,
+     "order_id": "350722b2-0a7d-44ba-b4f7-85c5ce70e704"
+    }
+   ],
+   "broker": "Alpaca paper account",
+   "mode": "paper"
+  }
+ ]
+}

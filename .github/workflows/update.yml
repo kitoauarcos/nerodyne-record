@@ -1,0 +1,48 @@
+name: Refresh live record
+
+# Marks the open position during US market hours and commits the result. The commit history is
+# itself part of the record: it shows when each basket was published and that nothing was edited
+# afterwards. Public repositories get unlimited Actions minutes, so this costs nothing.
+#
+# Times are UTC. US cash equities trade 13:30-20:00 UTC in summer and 14:30-21:00 in winter, so
+# the window below is deliberately wide and the job simply does less when the market is shut.
+
+on:
+  schedule:
+    - cron: "*/15 13-21 * * 1-5"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: live-record
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Mark the position
+        env:
+          ALPACA_KEY: ${{ secrets.ALPACA_KEY }}
+          ALPACA_SECRET: ${{ secrets.ALPACA_SECRET }}
+          ALPACA_BASE: ${{ secrets.ALPACA_BASE }}
+        run: python update_record.py
+
+      - name: Commit if anything moved
+        run: |
+          git config user.name "nerodyne-record"
+          git config user.email "record@users.noreply.github.com"
+          git add live_record_public.json
+          if git diff --cached --quiet; then
+            echo "No change, nothing to commit."
+          else
+            git commit -m "Mark $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git push
+          fi

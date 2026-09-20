@@ -1,0 +1,17 @@
+NERODYNE LIVE RECORD, PRE-COMMITMENT
+
+This file is published before the market opens on the trading day that follows the
+signal date below. It is committed to a public repository so its timestamp is held by
+someone other than us. If the basket later differs from this list, the hash will not
+match and the record is void.
+
+Signal date   2026-09-01
+Published     2026-09-20T10:08:06Z
+Basket        ADI, CRM, DELL, EXPE, GEN, MPC, MU, PAGP, PWR, VRT
+Weight each   10.00%
+SHA-256       9d33523840071b2c51c26490d31fb6ae07cb5ae4ac88df213e5e8f6de5bd6f4a
+Note          Entered off-cycle: the signal date was 1 September and the account was opened on 20 September, so the entry prices are three weeks late. Every basket from 1 December onward is on schedule.
+
+Verify any line with:
+    python -c "import hashlib;print(hashlib.sha256((DATE+chr(124)+TICKERS).encode()).hexdigest())"
+where TICKERS is the comma separated basket, sorted alphabetically, no spaces.

@@ -1,0 +1,7 @@
+# Nothing with a credential in it may ever be committed here. This repository is public.
+alpaca_config.json
+*.env
+*.key
+*.pem
+__pycache__/
+*.tmp
