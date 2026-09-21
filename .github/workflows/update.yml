@@ -9,7 +9,13 @@ name: Refresh live record
 
 on:
   schedule:
-    - cron: "*/15 13-21 * * 1-5"
+    # Twice an hour, deliberately off the top of the hour. GitHub queues scheduled runs and drops
+    # them outright under load, and the load peaks on the hour and at the common */5 and */15
+    # marks. A job asking for every five minutes has been measured firing about one slot in
+    # twenty. Asking less often, at odd minutes, gets asked-for runs far more reliably than asking
+    # more often does. For a basket that changes four times a year, eighteen marks a day is
+    # already far finer than the strategy itself.
+    - cron: "7,37 13-21 * * 1-5"
   workflow_dispatch: {}
 
 permissions:
