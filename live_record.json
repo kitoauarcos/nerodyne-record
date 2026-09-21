@@ -19,106 +19,200 @@
     "VRT"
    ],
    "sha256": "9d33523840071b2c51c26490d31fb6ae07cb5ae4ac88df213e5e8f6de5bd6f4a",
-   "note": "Entered off-cycle: the signal date was 1 September and the account was opened on 20 September, so the entry prices are three weeks late. Every basket from 1 December onward is on schedule. The opening auction filled only part of the basket and the remainder expired, so the rest was bought during the same session.",
+   "note": "Entered off-cycle: the signal date was 1 September and the account was opened on 20 September, so the entry prices are three weeks late. Every basket from 1 December onward is on schedule. The opening auction filled only part of the basket and the remainder expired, so the rest was bought during the same session. The opening auction filled only part of the basket and the remainder expired, so the rest was bought during the same session.",
    "weight_each": 0.1,
    "fills": [
     {
-     "ticker": "VRT",
+     "ticker": "CRM",
      "shares": 4.0,
-     "price": 254.06,
+     "price": 240.33,
      "commission": 0.0,
-     "date": "2026-09-21"
+     "date": "2026-09-21",
+     "order_id": "8a643d78-db2c-4afd-856c-d6e604d576e3"
     },
     {
      "ticker": "EXPE",
      "shares": 32.0,
      "price": 280.86,
      "commission": 0.0,
-     "date": "2026-09-21"
+     "date": "2026-09-21",
+     "order_id": "450dce9e-c5e0-459d-8d4e-091a0cf9783b"
     },
     {
      "ticker": "MPC",
      "shares": 13.0,
      "price": 423.26,
      "commission": 0.0,
-     "date": "2026-09-21"
+     "date": "2026-09-21",
+     "order_id": "658727ce-4d0e-44fc-9148-fc6bcde1a870"
     },
     {
-     "ticker": "CRM",
+     "ticker": "VRT",
      "shares": 4.0,
-     "price": 240.33,
+     "price": 254.06,
      "commission": 0.0,
-     "date": "2026-09-21"
+     "date": "2026-09-21",
+     "order_id": "350722b2-0a7d-44ba-b4f7-85c5ce70e704"
     },
     {
      "ticker": "ADI",
      "shares": 24.0,
      "price": 380.81,
      "commission": 0.0,
-     "date": "2026-09-21"
+     "date": "2026-09-21",
+     "order_id": "389be3ae-5fd7-4a03-8b29-643bd78c7cc8"
     },
     {
      "ticker": "CRM",
      "shares": 35.0,
      "price": 237.45,
      "commission": 0.0,
-     "date": "2026-09-21"
+     "date": "2026-09-21",
+     "order_id": "63fb7456-c701-46bd-8f11-e111bf422604"
     },
     {
      "ticker": "DELL",
      "shares": 16.0,
      "price": 571.89,
      "commission": 0.0,
-     "date": "2026-09-21"
+     "date": "2026-09-21",
+     "order_id": "7fc618c2-1dd6-41fe-919e-6da51910306f"
     },
     {
      "ticker": "EXPE",
      "shares": 1.0,
      "price": 281.85,
      "commission": 0.0,
-     "date": "2026-09-21"
+     "date": "2026-09-21",
+     "order_id": "916dc2b3-7829-425b-a45c-afef1491c05d"
     },
     {
      "ticker": "GEN",
      "shares": 324.0,
      "price": 29.24,
      "commission": 0.0,
-     "date": "2026-09-21"
+     "date": "2026-09-21",
+     "order_id": "d9e403e7-53b5-47b0-926c-cd755d27a5d0"
     },
     {
      "ticker": "MPC",
      "shares": 9.0,
      "price": 414.32,
      "commission": 0.0,
-     "date": "2026-09-21"
+     "date": "2026-09-21",
+     "order_id": "89c93662-8533-43cc-ae00-a460a89fcf35"
     },
     {
      "ticker": "MU",
      "shares": 9.0,
      "price": 1039.96,
      "commission": 0.0,
-     "date": "2026-09-21"
+     "date": "2026-09-21",
+     "order_id": "a08a4a43-ae9f-4128-91e0-6afedce23f68"
     },
     {
      "ticker": "PAGP",
      "shares": 345.0,
      "price": 27.45,
      "commission": 0.0,
-     "date": "2026-09-21"
+     "date": "2026-09-21",
+     "order_id": "2e6da738-895f-4d3d-bfc2-a4d49d8686be"
     },
     {
      "ticker": "PWR",
      "shares": 14.0,
      "price": 641.48,
      "commission": 0.0,
-     "date": "2026-09-21"
+     "date": "2026-09-21",
+     "order_id": "381838b8-823b-4fec-aafc-681bda7683f1"
     },
     {
      "ticker": "VRT",
      "shares": 33.0,
      "price": 254.39,
      "commission": 0.0,
-     "date": "2026-09-21"
+     "date": "2026-09-21",
+     "order_id": "f534a572-fd8b-4fb4-869e-02e0edd6a442"
+    },
+    {
+     "ticker": "ADI",
+     "shares": 0.924108783,
+     "price": 380.94,
+     "commission": 0.0,
+     "date": "2026-09-21",
+     "order_id": "bd317aa6-6682-4e66-8bad-019e5bb2c2f0"
+    },
+    {
+     "ticker": "CRM",
+     "shares": 0.915546847,
+     "price": 237.836,
+     "commission": 0.0,
+     "date": "2026-09-21",
+     "order_id": "1557594f-4a1e-45cf-af99-09237e371d2b"
+    },
+    {
+     "ticker": "DELL",
+     "shares": 0.586322916,
+     "price": 572.432,
+     "commission": 0.0,
+     "date": "2026-09-21",
+     "order_id": "a1bc535c-3422-4eb6-915e-82e8a628160a"
+    },
+    {
+     "ticker": "EXPE",
+     "shares": 0.692022737,
+     "price": 281.826,
+     "commission": 0.0,
+     "date": "2026-09-21",
+     "order_id": "bf25bbdb-0646-4350-b306-6eecab7c7c3f"
+    },
+    {
+     "ticker": "GEN",
+     "shares": 0.455601886,
+     "price": 29.258,
+     "commission": 0.0,
+     "date": "2026-09-21",
+     "order_id": "d7ac1134-17fc-43b9-9d1a-5153aca40ab7"
+    },
+    {
+     "ticker": "MPC",
+     "shares": 0.918401814,
+     "price": 414.47,
+     "commission": 0.0,
+     "date": "2026-09-21",
+     "order_id": "4a4e4d59-95a0-402a-83ab-e998081d0e0a"
+    },
+    {
+     "ticker": "MU",
+     "shares": 0.120866496,
+     "price": 1041.066,
+     "commission": 0.0,
+     "date": "2026-09-21",
+     "order_id": "6cebf558-5b4a-4648-a092-fe9dbb8771b1"
+    },
+    {
+     "ticker": "PAGP",
+     "shares": 0.287314518,
+     "price": 27.496,
+     "commission": 0.0,
+     "date": "2026-09-21",
+     "order_id": "8384d49c-1b27-4765-9bf9-30aac12a5337"
+    },
+    {
+     "ticker": "PWR",
+     "shares": 0.80217272,
+     "price": 641.408,
+     "commission": 0.0,
+     "date": "2026-09-21",
+     "order_id": "8a9a7b68-b0ed-4f41-852c-ed0e610244e4"
+    },
+    {
+     "ticker": "VRT",
+     "shares": 0.414065701,
+     "price": 253.752,
+     "commission": 0.0,
+     "date": "2026-09-21",
+     "order_id": "270732d4-6bc6-4d5a-a384-90087d4a04bd"
     }
    ],
    "orders": [
@@ -221,12 +315,62 @@
      "ticker": "VRT",
      "qty": 33,
      "order_id": "f534a572-fd8b-4fb4-869e-02e0edd6a442"
+    },
+    {
+     "ticker": "ADI",
+     "notional": 352.04,
+     "order_id": "bd317aa6-6682-4e66-8bad-019e5bb2c2f0"
+    },
+    {
+     "ticker": "CRM",
+     "notional": 217.76,
+     "order_id": "1557594f-4a1e-45cf-af99-09237e371d2b"
+    },
+    {
+     "ticker": "DELL",
+     "notional": 335.64,
+     "order_id": "a1bc535c-3422-4eb6-915e-82e8a628160a"
+    },
+    {
+     "ticker": "EXPE",
+     "notional": 195.04,
+     "order_id": "bf25bbdb-0646-4350-b306-6eecab7c7c3f"
+    },
+    {
+     "ticker": "GEN",
+     "notional": 13.34,
+     "order_id": "d7ac1134-17fc-43b9-9d1a-5153aca40ab7"
+    },
+    {
+     "ticker": "MPC",
+     "notional": 380.66,
+     "order_id": "4a4e4d59-95a0-402a-83ab-e998081d0e0a"
+    },
+    {
+     "ticker": "MU",
+     "notional": 125.84,
+     "order_id": "6cebf558-5b4a-4648-a092-fe9dbb8771b1"
+    },
+    {
+     "ticker": "PAGP",
+     "notional": 7.91,
+     "order_id": "8384d49c-1b27-4765-9bf9-30aac12a5337"
+    },
+    {
+     "ticker": "PWR",
+     "notional": 514.53,
+     "order_id": "8a9a7b68-b0ed-4f41-852c-ed0e610244e4"
+    },
+    {
+     "ticker": "VRT",
+     "notional": 105.08,
+     "order_id": "270732d4-6bc6-4d5a-a384-90087d4a04bd"
     }
    ],
    "broker": "Alpaca paper account",
    "mode": "paper",
    "not_filled": [],
-   "cash_invested": 92757.86
+   "cash_invested": 95005.6
   }
  ],
  "marks": {

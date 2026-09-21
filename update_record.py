@@ -19,6 +19,7 @@ from urllib.request import Request, urlopen
 ROOT = Path(__file__).resolve().parent
 BOOK = ROOT / 'live_record.json'
 OUT = ROOT / 'live_record_public.json'
+HISTORY = ROOT / 'live_history.json'
 BASE = os.environ.get('ALPACA_BASE', 'https://paper-api.alpaca.markets/v2')
 KEY = os.environ.get('ALPACA_KEY')
 SECRET = os.environ.get('ALPACA_SECRET')
@@ -117,6 +118,26 @@ def main():
         clock = api(BASE + '/clock') or {}
         as_of = (clock.get('timestamp') or '')[:19]
 
+    # A running series of what the position has been worth. Appended to, never rewritten, so the
+    # chart on the site is a record of marks taken at the time rather than a curve recomputed
+    # later from today's prices.
+    history = []
+    if HISTORY.exists():
+        try:
+            history = json.loads(HISTORY.read_text(encoding='utf-8'))
+        except Exception:
+            history = []
+    if position and position.get('invested'):
+        stamp = datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%MZ')
+        point = {'t': stamp, 'value': round(position['value'], 2),
+                 'invested': round(position['invested'], 2),
+                 'change': position['change']}
+        last = history[-1] if history else None
+        if not last or last['t'] != stamp:
+            if not last or abs(last['value'] - point['value']) > 0.005:
+                history.append(point)
+                HISTORY.write_text(json.dumps(history, separators=(',', ':')), encoding='utf-8')
+
     modes = {e.get('mode') for e in entries if e.get('mode')}
     mode = 'paper' if modes == {'paper'} else ('live' if modes == {'live'}
                                                else ('mixed' if modes else 'none'))
@@ -135,6 +156,7 @@ def main():
                                for f in e.get('fills', [])]}
                     for e in entries],
         'position': position,
+        'history': history[-2000:],
         'disclosure': ('Every basket above was published and hash stamped before it was traded, at '
                        'the open of the session that followed. This record is short and proves very '
                        'little on its own yet.'),
