@@ -1,6 +1,5 @@
 {
  "model": "Nova Sharpe",
- "capital_is": "SIMULATED. Alpaca paper account. The baskets and prices are real, the money is not.",
  "started": "2026-09-01",
  "capital": 100000.0,
  "entries": [
@@ -20,9 +19,108 @@
     "VRT"
    ],
    "sha256": "9d33523840071b2c51c26490d31fb6ae07cb5ae4ac88df213e5e8f6de5bd6f4a",
-   "note": "Entered off-cycle: the signal date was 1 September and the account was opened on 20 September, so the entry prices are three weeks late. Every basket from 1 December onward is on schedule.",
+   "note": "Entered off-cycle: the signal date was 1 September and the account was opened on 20 September, so the entry prices are three weeks late. Every basket from 1 December onward is on schedule. The opening auction filled only part of the basket and the remainder expired, so the rest was bought during the same session.",
    "weight_each": 0.1,
-   "fills": [],
+   "fills": [
+    {
+     "ticker": "VRT",
+     "shares": 4.0,
+     "price": 254.06,
+     "commission": 0.0,
+     "date": "2026-09-21"
+    },
+    {
+     "ticker": "EXPE",
+     "shares": 32.0,
+     "price": 280.86,
+     "commission": 0.0,
+     "date": "2026-09-21"
+    },
+    {
+     "ticker": "MPC",
+     "shares": 13.0,
+     "price": 423.26,
+     "commission": 0.0,
+     "date": "2026-09-21"
+    },
+    {
+     "ticker": "CRM",
+     "shares": 4.0,
+     "price": 240.33,
+     "commission": 0.0,
+     "date": "2026-09-21"
+    },
+    {
+     "ticker": "ADI",
+     "shares": 24.0,
+     "price": 380.81,
+     "commission": 0.0,
+     "date": "2026-09-21"
+    },
+    {
+     "ticker": "CRM",
+     "shares": 35.0,
+     "price": 237.45,
+     "commission": 0.0,
+     "date": "2026-09-21"
+    },
+    {
+     "ticker": "DELL",
+     "shares": 16.0,
+     "price": 571.89,
+     "commission": 0.0,
+     "date": "2026-09-21"
+    },
+    {
+     "ticker": "EXPE",
+     "shares": 1.0,
+     "price": 281.85,
+     "commission": 0.0,
+     "date": "2026-09-21"
+    },
+    {
+     "ticker": "GEN",
+     "shares": 324.0,
+     "price": 29.24,
+     "commission": 0.0,
+     "date": "2026-09-21"
+    },
+    {
+     "ticker": "MPC",
+     "shares": 9.0,
+     "price": 414.32,
+     "commission": 0.0,
+     "date": "2026-09-21"
+    },
+    {
+     "ticker": "MU",
+     "shares": 9.0,
+     "price": 1039.96,
+     "commission": 0.0,
+     "date": "2026-09-21"
+    },
+    {
+     "ticker": "PAGP",
+     "shares": 345.0,
+     "price": 27.45,
+     "commission": 0.0,
+     "date": "2026-09-21"
+    },
+    {
+     "ticker": "PWR",
+     "shares": 14.0,
+     "price": 641.48,
+     "commission": 0.0,
+     "date": "2026-09-21"
+    },
+    {
+     "ticker": "VRT",
+     "shares": 33.0,
+     "price": 254.39,
+     "commission": 0.0,
+     "date": "2026-09-21"
+    }
+   ],
    "orders": [
     {
      "ticker": "ADI",
@@ -73,10 +171,215 @@
      "ticker": "VRT",
      "qty": 38,
      "order_id": "350722b2-0a7d-44ba-b4f7-85c5ce70e704"
+    },
+    {
+     "ticker": "ADI",
+     "qty": 24,
+     "order_id": "389be3ae-5fd7-4a03-8b29-643bd78c7cc8"
+    },
+    {
+     "ticker": "CRM",
+     "qty": 35,
+     "order_id": "63fb7456-c701-46bd-8f11-e111bf422604"
+    },
+    {
+     "ticker": "DELL",
+     "qty": 16,
+     "order_id": "7fc618c2-1dd6-41fe-919e-6da51910306f"
+    },
+    {
+     "ticker": "EXPE",
+     "qty": 1,
+     "order_id": "916dc2b3-7829-425b-a45c-afef1491c05d"
+    },
+    {
+     "ticker": "GEN",
+     "qty": 324,
+     "order_id": "d9e403e7-53b5-47b0-926c-cd755d27a5d0"
+    },
+    {
+     "ticker": "MPC",
+     "qty": 9,
+     "order_id": "89c93662-8533-43cc-ae00-a460a89fcf35"
+    },
+    {
+     "ticker": "MU",
+     "qty": 9,
+     "order_id": "a08a4a43-ae9f-4128-91e0-6afedce23f68"
+    },
+    {
+     "ticker": "PAGP",
+     "qty": 345,
+     "order_id": "2e6da738-895f-4d3d-bfc2-a4d49d8686be"
+    },
+    {
+     "ticker": "PWR",
+     "qty": 14,
+     "order_id": "381838b8-823b-4fec-aafc-681bda7683f1"
+    },
+    {
+     "ticker": "VRT",
+     "qty": 33,
+     "order_id": "f534a572-fd8b-4fb4-869e-02e0edd6a442"
     }
    ],
    "broker": "Alpaca paper account",
-   "mode": "paper"
+   "mode": "paper",
+   "not_filled": [],
+   "cash_invested": 92757.86
   }
- ]
+ ],
+ "marks": {
+  "as_of": "2026-09-18",
+  "positions": {
+   "VRT": {
+    "price": 249.39,
+    "as_of": "2026-09-18"
+   },
+   "EXPE": {
+    "price": 279.35,
+    "as_of": "2026-09-18"
+   },
+   "MPC": {
+    "price": 424.89,
+    "as_of": "2026-09-18"
+   },
+   "CRM": {
+    "price": 237.92,
+    "as_of": "2026-09-18"
+   },
+   "ADI": {
+    "price": 375.72,
+    "as_of": "2026-09-18"
+   },
+   "DELL": {
+    "price": 568.06,
+    "as_of": "2026-09-18"
+   },
+   "GEN": {
+    "price": 29.01,
+    "as_of": "2026-09-18"
+   },
+   "MU": {
+    "price": 1015.8,
+    "as_of": "2026-09-18"
+   },
+   "PAGP": {
+    "price": 27.67,
+    "as_of": "2026-09-18"
+   },
+   "PWR": {
+    "price": 636.71,
+    "as_of": "2026-09-18"
+   }
+  },
+  "benchmark": 761.69,
+  "stale": []
+ },
+ "position": {
+  "signal_date": "2026-09-01",
+  "invested": 92757.86,
+  "value": 92180.21,
+  "change": -0.006228,
+  "names": [
+   {
+    "ticker": "VRT",
+    "shares": 4.0,
+    "entry": 254.06,
+    "now": 249.39,
+    "change": -0.018381
+   },
+   {
+    "ticker": "EXPE",
+    "shares": 32.0,
+    "entry": 280.86,
+    "now": 279.35,
+    "change": -0.005376
+   },
+   {
+    "ticker": "MPC",
+    "shares": 13.0,
+    "entry": 423.26,
+    "now": 424.89,
+    "change": 0.003851
+   },
+   {
+    "ticker": "CRM",
+    "shares": 4.0,
+    "entry": 240.33,
+    "now": 237.92,
+    "change": -0.010028
+   },
+   {
+    "ticker": "ADI",
+    "shares": 24.0,
+    "entry": 380.81,
+    "now": 375.72,
+    "change": -0.013366
+   },
+   {
+    "ticker": "CRM",
+    "shares": 35.0,
+    "entry": 237.45,
+    "now": 237.92,
+    "change": 0.001979
+   },
+   {
+    "ticker": "DELL",
+    "shares": 16.0,
+    "entry": 571.89,
+    "now": 568.06,
+    "change": -0.006697
+   },
+   {
+    "ticker": "EXPE",
+    "shares": 1.0,
+    "entry": 281.85,
+    "now": 279.35,
+    "change": -0.00887
+   },
+   {
+    "ticker": "GEN",
+    "shares": 324.0,
+    "entry": 29.24,
+    "now": 29.01,
+    "change": -0.007866
+   },
+   {
+    "ticker": "MPC",
+    "shares": 9.0,
+    "entry": 414.32,
+    "now": 424.89,
+    "change": 0.025512
+   },
+   {
+    "ticker": "MU",
+    "shares": 9.0,
+    "entry": 1039.96,
+    "now": 1015.8,
+    "change": -0.023232
+   },
+   {
+    "ticker": "PAGP",
+    "shares": 345.0,
+    "entry": 27.45,
+    "now": 27.67,
+    "change": 0.008015
+   },
+   {
+    "ticker": "PWR",
+    "shares": 14.0,
+    "entry": 641.48,
+    "now": 636.71,
+    "change": -0.007436
+   },
+   {
+    "ticker": "VRT",
+    "shares": 33.0,
+    "entry": 254.39,
+    "now": 249.39,
+    "change": -0.019655
+   }
+  ]
+ }
 }

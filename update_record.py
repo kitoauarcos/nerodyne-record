@@ -48,9 +48,12 @@ def collect_fills(book):
             continue
         ids = {o['order_id'] for o in e['orders']}
         got = api(BASE + '/orders?status=closed&limit=500&direction=asc') or []
-        done = [o for o in got if o['id'] in ids and o['status'] == 'filled']
+        # Anything that actually traded counts, not only orders that filled in full. An
+        # opening-auction order that fills partially and then expires still bought shares, and a
+        # record that ignored them would understate what was really held.
+        done = [o for o in got if o['id'] in ids and float(o.get('filled_qty') or 0) > 0]
         if not done:
-            print('  %s: orders placed, nothing filled yet' % e['signal_date'])
+            print('  %s: orders placed, nothing has traded yet' % e['signal_date'])
             continue
         fills = []
         for o in done:
