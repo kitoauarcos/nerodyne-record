@@ -88,16 +88,26 @@ def main():
         current = traded[-1]
         held = api(BASE + '/positions') or []
         by_symbol = {p['symbol']: p for p in held}
-        names, invested, value = [], 0.0, 0.0
+        # One row per company, not per fill. A name bought in two goes is still one holding, and
+        # its entry price is the average of what was actually paid, weighted by size.
+        merged = {}
         for f in current['fills']:
-            p = by_symbol.get(f['ticker'])
+            m = merged.setdefault(f['ticker'], {'shares': 0.0, 'cost': 0.0})
+            m['shares'] += f['shares']
+            m['cost'] += f['shares'] * f['price']
+        names, invested, value = [], 0.0, 0.0
+        for ticker in sorted(merged):
+            m = merged[ticker]
+            entry = m['cost'] / m['shares'] if m['shares'] else 0.0
+            p = by_symbol.get(ticker)
             now = float(p['current_price']) if p else None
-            invested += f['shares'] * f['price']
+            invested += m['cost']
             if now:
-                value += f['shares'] * now
-            names.append({'ticker': f['ticker'], 'shares': f['shares'], 'entry': f['price'],
-                          'now': now,
-                          'change': round(now / f['price'] - 1, 6) if now else None})
+                value += m['shares'] * now
+            names.append({'ticker': ticker, 'shares': round(m['shares'], 4),
+                          'entry': round(entry, 4), 'now': now,
+                          'fills': sum(1 for f in current['fills'] if f['ticker'] == ticker),
+                          'change': round(now / entry - 1, 6) if now and entry else None})
         acct = api(BASE + '/account') or {}
         position = {'signal_date': current['signal_date'], 'invested': round(invested, 2),
                     'value': round(value, 2),
